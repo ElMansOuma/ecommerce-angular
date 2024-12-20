@@ -1,0 +1,46 @@
+<div class="home-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Elegant Store</div>
+    <nav class="nav-links">
+      <a href="#" class="active">HOME</a>
+      <a href="#">SHOP</a>
+      <a href="#">CONTACT</a>
+      <a href="#">ABOUT US</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="btn login">Login</button>
+      <button class="btn signup">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Your Style, Your Choice</h1>
+      <p>
+        Discover the latest trends and timeless pieces. Shop now to elevate your wardrobe!
+      </p>
+      <div class="buttons">
+        <button class="btn shop-now">SHOP NOW</button>
+        <button class="btn learn-more">LEARN MORE</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img [src]="imagePath" alt="Hero" /> <!-- Use imagePath from the component -->
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="products-grid">
+      <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.image" [alt]="product.name" />
+        <h3>{{ product.name }}</h3>
+        <p>${{ product.price }}</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+</div>
