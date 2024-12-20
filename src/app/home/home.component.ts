@@ -10,24 +10,24 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   // Example image for the Hero section
-  imagePath = 'assets/image1.png'; // Corrected path to assets folder
+  imagePath = '/homm.png.png'; // Remarquez l'absence de 'assets/'
 
   // List of products with images
   products = [
     {
       name: 'Product 1',
       price: 49.99,
-      image: 'assets/product1.png' // Corrected path to assets folder
+      image: 'product4.png' // Corrected path to assets folder
     },
     {
       name: 'Product 2',
       price: 79.99,
-      image: 'assets/product2.png' // Corrected path to assets folder
+      image: 'product2.png' // Corrected path to assets folder
     },
     {
       name: 'Product 3',
       price: 99.99,
-      image: 'assets/product3.png' // Corrected path to assets folder
+      image: 'product3.png' // Corrected path to assets folder
     }
   ];
 

@@ -14,7 +14,7 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #007bff;
+      color: #ff0000;
     }
 
     .nav-links {
@@ -27,12 +27,12 @@
         color: #333;
 
         &.active {
-          color: #007bff;
+          color: #ff0000;
           font-weight: bold;
         }
 
         &:hover {
-          color: #0056b3;
+          color: #ff0000;
         }
       }
     }
@@ -50,12 +50,12 @@
         font-weight: bold;
 
         &.login {
-          background-color: #007bff;
+          background-color: #ff0000;
           color: #fff;
         }
 
         &.signup {
-          background-color: #28a745;
+          background-color: black;
           color: #fff;
         }
 
@@ -78,7 +78,7 @@
 
       h1 {
         font-size: 48px;
-        color: #007bff;
+        color: #ff0000;
         margin-bottom: 20px;
       }
 
@@ -98,7 +98,7 @@
           cursor: pointer;
 
           &.shop-now {
-            background-color: #007bff;
+            background-color: #ff0000;
             color: #fff;
           }
 
@@ -155,7 +155,7 @@
         h3 {
           font-size: 18px;
           margin-bottom: 10px;
-          color: #007bff;
+          color: #ff0000;
         }
 
         p {
@@ -167,7 +167,7 @@
         .btn {
           padding: 10px 20px;
           font-size: 14px;
-          background-color: #007bff;
+          background-color: #ff0000;
           color: #fff;
           border: none;
           border-radius: 5px;
@@ -180,4 +180,67 @@
       }
     }
   }
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #ff0000;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.social-icon:hover {
+  color: #ff0000;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
+
+.footer-bottom p {
+  margin: 0;
 }
