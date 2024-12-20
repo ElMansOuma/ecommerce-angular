@@ -3,14 +3,15 @@
   <header class="header">
     <div class="logo">e-commerce</div>
     <nav class="nav-links">
-      <a href="#" class="active">HOME</a>
-      <a href="#">SHOP</a>
-      <a href="#">CONTACT</a>
-      <a href="#">ABOUT US</a>
+      <a routerLink="/home" class="active">HOME</a>
+      <a routerLink="/shop">SHOP</a>
+      <a routerLink="/contact">CONTACT</a>
+      <a routerLink="/about-us">ABOUT US</a>
     </nav>
     <div class="auth-buttons">
-      <button class="btn login">Login</button>
-      <button class="btn signup">Sign Up</button>
+
+      <button class="btn login" routerLink="/login">Login</button>
+      <button class="btn signup" routerLink="/register">Sign Up</button>
     </div>
   </header>
 
@@ -54,17 +55,17 @@
 
     <!-- Liens de navigation -->
     <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">FAQ</a>
-      <a href="#">Contact Us</a>
+      <a routerLink="/home">Privacy Policy</a>
+      <a routerLink="/home">Terms of Service</a>
+      <a routerLink="/home">FAQ</a>
+      <a routerLink="/contact-us">Contact Us</a>
     </div>
 
     <!-- Icônes sociales -->
     <div class="footer-socials">
-      <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-      <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+      <a routerLink="/fb" class="social-icon"><i class="fa fa-facebook"></i></a>
+      <a routerLink="/tw" class="social-icon"><i class="fa fa-twitter"></i></a>
+      <a routerLink="/ig" class="social-icon"><i class="fa fa-instagram"></i></a>
     </div>
   </div>
 

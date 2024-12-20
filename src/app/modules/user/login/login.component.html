@@ -1,21 +1,30 @@
 <div class="login-container">
-  <div class="login-box">
-    <h2>Login</h2>
-    <form>
-      <div class="textbox">
-        <input type="text" placeholder="Username" name="username" required />
+  <div class="login-content">
+    <div class="login-image">
+      <img src="logo.jpg" alt="Store Background" />
+    </div>
+
+    <div class="login-form">
+      <h2>Welcome Back!</h2>
+      <p>Login to your account</p>
+
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" [(ngModel)]="password" name="password" required />
+        </div>
+
+        <button type="submit" class="btn login-btn">Login</button>
+      </form>
+
+      <div class="signup-link">
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
       </div>
-      <div class="textbox">
-        <input type="password" placeholder="Password" name="password" required />
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="remember" /> Remember me
-      </div>
-      <button type="submit" class="btn login-btn">Login</button>
-    </form>
-    <div class="links">
-      <a href="#">Forgot Password?</a>
-      <a href="#">Create an Account</a>
     </div>
   </div>
 </div>
