@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { DataService } from '../services/data.service'; // Importation du service DataService
 
 @Component({
   selector: 'app-home',
@@ -13,29 +14,15 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  // Example image for the Hero section
-  imagePath = '/homm.png.png'; // Remarquez l'absence de 'assets/'
+  imagePath = 'homm.png.png'; // Correction du chemin de l'image
+  products: any[] = []; // Liste des produits, initialement vide
 
-  // List of products with images
-  products = [
-    {
-      name: 'Product 1',
-      price: 49.99,
-      image: 'product4.png' // Corrected path to assets folder
-    },
-    {
-      name: 'Product 2',
-      price: 79.99,
-      image: 'product2.png' // Corrected path to assets folder
-    },
-    {
-      name: 'Product 3',
-      price: 99.99,
-      image: 'product3.png' // Corrected path to assets folder
-    }
-  ];
+  constructor(private dataService: DataService) { } // Injection du service
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    // Récupération des produits à partir de DataService
+    this.dataService.getProducts().subscribe((data) => {
+      this.products = data;
+    });
+  }
 }

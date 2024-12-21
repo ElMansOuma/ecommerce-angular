@@ -1,7 +1,8 @@
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';  // Ajoutez cette ligne
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router'; // Importation pour rediriger après connexion
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule  // Ajoutez FormsModule ici
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -17,9 +17,20 @@ import { RouterModule } from '@angular/router';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  errorMessage: string = ''; // Pour gérer les erreurs de connexion
+
+  constructor(private authService: AuthService, private router: Router) { } // Injection de AuthService et Router
 
   onSubmit() {
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    const isLoggedIn = this.authService.login(this.email, this.password);
+
+    if (isLoggedIn) {
+      console.log('Connexion réussie :', this.email);
+      // Redirection vers une page protégée (par exemple : dashboard)
+      this.router.navigate(['/profile']);
+    } else {
+      this.errorMessage = 'Email ou mot de passe incorrect';
+      console.log(this.errorMessage);
+    }
   }
 }

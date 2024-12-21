@@ -1,0 +1,21 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <h2>Profile</h2>
+    </div>
+    <div class="profile-info">
+      <div class="profile-detail">
+        <label for="name">Name:</label>
+        <p>{{ user.name || 'Nom non disponible' }}</p>
+      </div>
+      <div class="profile-detail">
+        <label for="email">Email:</label>
+        <p>{{ user.email || 'Email non disponible' }}</p>
+      </div>
+    </div>
+    <div class="profile-actions">
+      <button (click)="editProfile()" class="btn">Edit Profile</button>
+      <button (click)="logout()" class="btn logout-btn">Logout</button>
+    </div>
+  </div>
+</div>

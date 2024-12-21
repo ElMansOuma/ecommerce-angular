@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
+
 
 @Component({
   selector: 'app-register',
@@ -9,26 +11,30 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule  // Ajout de FormsModule pour ngModel
+    RouterModule,
   ],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
-export class registerComponent {
-  // Ajout de la propriété name
+export class RegisterComponent {
   name: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
+  message: string = ''; // Message à afficher après l'inscription
+
+  constructor(private authService: AuthService) { }
 
   onSubmit() {
     if (this.password === this.confirmPassword) {
-      console.log('Name:', this.name);   // Afficher le nom
-      console.log('Email:', this.email);
-      console.log('Password:', this.password);
-      // Ajoutez la logique d'envoi des données au serveur ici
+      const success = this.authService.register(this.email, this.password);
+      if (success) {
+        this.message = 'Inscription réussie !';
+      } else {
+        this.message = 'L\'utilisateur existe déjà.';
+      }
     } else {
-      console.log('Les mots de passe ne correspondent pas');
+      this.message = 'Les mots de passe ne correspondent pas';
     }
   }
 }
