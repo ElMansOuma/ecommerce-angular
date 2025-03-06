@@ -1,5 +1,11 @@
 # EcommerceAngular
+# Mon Projet eCommerce
 
+![Aperçu de l'application](public/img.png)
+![Aperçu de l'application](public/home.png)
+
+
+Description du projet...
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
 
 ## Development server
